@@ -1,6 +1,10 @@
 package Atividade02_Arrays;
 import java.util.Scanner;
 
+/*
+2.Ler 4 números inteiros (usando vetor) e calcular a soma dos que forem par, trate os
+possíveis erros.
+*/
 public class Atividade02_02 {
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);

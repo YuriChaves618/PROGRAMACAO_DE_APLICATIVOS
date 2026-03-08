@@ -1,41 +1,48 @@
-package ContaBancaria;
+package Banco;
 import java.util.Scanner;
-import  ContaBancaria.Conta_Bancaria;
+import Banco.ContaBancaria;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[]args){
 
+        Scanner scanner = new Scanner(System.in);
+        ContaBancaria contaBancaria = new ContaBancaria("4356","Deivid da Luz",0);
         int op = 0;
 
-        Conta_Bancaria contabancaria = new Conta_Bancaria();
-
+        System.out.println("\n=== Sistema de Contas Bancárias ===");
 
         do {
-
-            System.out.println("\n=== Conta Bancária ===");
+            System.out.println("\n--- Menu Principal ---");
             System.out.println("1. Depositar");
-            System.out.println("2. Conferir Saldo Disponível");
-            System.out.println("3. Sacar");
-            System.out.println("4. Sair do Programa");
+            System.out.println("2. Sacar");
+            System.out.println("3. Conferir Saldo");
+            System.out.println("4. Sair");
+            System.out.println("Informe a opção desejada");
             op = scanner.nextInt();
 
-            switch (op) {
+            switch(op){
                 case 1:
-                    contabancaria.Deposito();
+                    System.out.println("Informe o valor que deseja depositar");
+                    contaBancaria.Deposito(scanner.nextDouble());
                     break;
                 case 2:
-                    System.out.println("Seu Saldo Atual é: "+contabancaria.getSaldo());
+                    System.out.println("Informe o valor que deseja sacar");
+                    contaBancaria.Sacar(scanner.nextDouble());
                     break;
                 case 3:
-                    contabancaria.Sacar();
+                    System.out.println("Saldo atual: "+contaBancaria.getSaldo());
                     break;
                 case 4:
                     System.out.println("Encerrando...");
                     scanner.nextLine();
                     break;
+                default:
+                    System.out.println("Opção Inválida");
+                    break;
             }
+
+
         }while(op != 4);
+
     }
-}
 

@@ -1,25 +1,32 @@
-public class Moto extends Veiculo{
-    private double cilindradas;
+public class Veiculo {
+    private String marca = "";
+    private int ano = 0;
 
-    public Moto(){
+    public Veiculo(){
 
     }
 
-    public Moto( String marca, int ano, double cilindradas){
-        super(marca, ano);
-        this.cilindradas = cilindradas;
+    public Veiculo(String marca, int ano){
+            this.marca =  marca;
+            this.ano = ano;
     }
 
-    public double getCilindradas(){
-        return this.cilindradas;
+    public String getMarca(){
+        return this.marca;
+    }
+    public void setMarca(String marca){
+        this.marca = marca;
     }
 
-    public void setCilindradas(double cilindradas){
-        this.cilindradas = cilindradas;
+    public int getAno(){
+        return this.ano;
     }
 
-    @Override
+    public void setAno(int ano){
+        this.ano = ano;
+    }
+
     public void exibirInformacoes(){
-        System.out.println("Marca: "+getMarca()+" Ano: "+getAno()+" Cilindradas: "+getCilindradas());
+        System.out.println("Marca: "+getMarca()+" Ano: "+getAno());
     }
 }
